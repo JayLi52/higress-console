@@ -10,7 +10,7 @@ interface McpServerCommandProps {
   config: string;
 }
 
-// loader.config({ paths: { vs: '/vs' } });
+loader.config({ paths: { vs: '/vs' } });
 
 const McpServerCommand: React.FC<McpServerCommandProps> = ({ mode, config }) => {
   const [client, setClient] = useState('vscode');

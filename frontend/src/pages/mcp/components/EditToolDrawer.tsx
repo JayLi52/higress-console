@@ -14,7 +14,7 @@ interface EditToolDrawerProps {
   onSubmit: (rawConfigurations: string) => any;
 }
 
-// loader.config({ paths: { vs: '/vs' } });
+loader.config({ paths: { vs: '/vs' } });
 
 const EditToolDrawer: React.FC<EditToolDrawerProps> = ({
   visible,

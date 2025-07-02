@@ -29,7 +29,7 @@ import AddConsumerAuth from './components/AddConsumerAuth';
 import YamlUtil from './components/yamlUtil';
 import MonacoEditor, { loader } from '@monaco-editor/react';
 
-// loader.config({ paths: { vs: '/vs' } });
+loader.config({ paths: { vs: '/vs' } });
 
 const MCPDetailPage: React.FC = () => {
   const { t } = useTranslation();
