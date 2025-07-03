@@ -12,7 +12,7 @@ export interface IProps {
 
 const CodeEditor: React.FC<IProps> = (props) => {
   const { defaultValue, onChange, extraOptions, editorHeight, defaultLanguage } = props;
-  loader.config({ monaco });
+  loader.config({ monaco, paths: { vs: '/vs' } });
 
   const editorRef = useRef<any>(null);
 
