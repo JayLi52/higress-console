@@ -22,7 +22,8 @@
     "pluginManagement": "Plugin Management",
     "systemSettings": "System Settings",
     "mcpManagement": "MCP Management",
-    "mcpConfigurations": "MCP Configurations"
+    "mcpConfigurations": "MCP Configurations",
+    "modelApiManagement": "Model API Management"
   },
   "index": {
     "title": "Higress Console"
@@ -130,6 +131,121 @@
       "authEnabled": "Enabled with consumers",
       "reset": "Reset"
     }
+  },
+  "modelApi": {
+    "create": "Create Model API",
+    "edit": "Edit Model API",
+    "deleteConfirmationPrefix": "Are you sure to delete ",
+    "deleteConfirmationSuffix": "? This action cannot be undone.",
+    "columns": {
+      "apiName": "API Name",
+      "sceneAndProtocol": "Scene / Protocol",
+      "basePath": "External Address",
+      "routes": "Method / Path",
+      "providers": "Targets",
+      "publishStatus": "Publish Status",
+      "version": "Version",
+      "versions": "Desired / Applied"
+    },
+    "search": {
+      "keyword": "Keyword",
+      "keywordPlaceholder": "Name / description / base path"
+    },
+    "status": {
+      "DRAFT": "Draft",
+      "PUBLISHING": "Publishing",
+      "PUBLISHED": "Published",
+      "FAILED": "Failed",
+      "PENDING": "Pending",
+      "SYNCING": "Syncing",
+      "SUCCESS": "K8s verified"
+    },
+    "sceneTypes": {
+      "TEXT_GENERATION": "Text Generation",
+      "IMAGE_GENERATION": "Image Generation",
+      "VIDEO_GENERATION": "Video Generation",
+      "SPEECH_RECOGNITION": "Speech Recognition",
+      "SPEECH_SYNTHESIS": "Speech Synthesis",
+      "RERANK": "Rerank",
+      "EMBEDDING": "Embedding",
+      "OTHER": "Other"
+    },
+    "protocols": {
+      "OPENAI": "OpenAI Compatible",
+      "ANTHROPIC": "Anthropic Compatible",
+      "BAILIAN": "Bailian",
+      "VLLM": "vLLM",
+      "DOUBAO": "Doubao",
+      "COMFYUI": "ComfyUI",
+      "HTTP_CUSTOM": "HTTP Custom",
+      "WS_CUSTOM": "WebSocket Custom"
+    },
+    "dispatcherStrategies": {
+      "HEADER": "Model Name Routing",
+      "WEIGHT_MODEL_MAPPING": "Weighted Routing",
+      "CONTEXT_LENGTH": "Context Length Routing",
+      "SINGLE_MODEL_MAPPING": "Single Provider"
+    },
+    "actions": {
+      "publish": "Publish",
+      "publishing": "Publishing..."
+    },
+    "messages": {
+      "created": "Created successfully",
+      "updated": "Updated successfully",
+      "deleted": "Deleted successfully",
+      "published": "Published successfully"
+    },
+    "form": {
+      "apiName": "API Name",
+      "apiNameExtra": "Unique within the instance and immutable after creation. It derives data-plane route names.",
+      "apiNameRequired": "API name is required",
+      "apiNamePattern": "2-51 lowercase alphanumerics and hyphens; must not start with a hyphen",
+      "description": "Description",
+      "descriptionPlaceholder": "What this endpoint is for",
+      "sceneType": "Scene",
+      "sceneTypeRequired": "Scene is required",
+      "sceneTypePlaceholder": "Select a scene",
+      "protocol": "Protocol",
+      "protocolRequired": "Protocol is required",
+      "protocolPlaceholder": "Select a protocol",
+      "basePath": "Base Path",
+      "basePathExtra": "Path prefix of the external contract, e.g. /api/qwen/",
+      "basePathRequired": "Base path is required",
+      "basePathPattern": "Must start with /",
+      "basePathRemove": "Remove base path before forwarding",
+      "basePathRemoveExtra": "Strip the prefix before forwarding to the upstream",
+      "firstByteTimeout": "First Byte Timeout (ms)",
+      "firstByteTimeoutExtra": "Leave empty to use the global default",
+      "domain": "Domain",
+      "domainExtra": "At most 1 domain",
+      "methodPathList": "Method / Path",
+      "methodRequired": "Method is required",
+      "pathRequired": "Path is required",
+      "pathPattern": "Must start with /",
+      "addMethodPath": "Add Path",
+      "methodAny": "Any Method",
+      "dispatcherStrategy": "Dispatch Strategy",
+      "dispatcherStrategyRequired": "Dispatch strategy is required",
+      "dispatcherStrategyExtra": "How requests are distributed to provider pools",
+      "dispatcherTargets": "Targets",
+      "providerRequired": "Provider is required",
+      "providerPlaceholder": "AI service provider",
+      "weightRequired": "Weight is required",
+      "weightExtra": "Weight range 1-1000",
+      "targetModelPlaceholder": "Target model (rewritable)",
+      "addTarget": "Add Provider",
+      "currentStatus": "Current Publish Status",
+      "advancedConfig": "Advanced configuration",
+      "upstreamAffinityConfig": "Upstream affinity",
+      "observationConfig": "Observability",
+      "fallback": "Fallback",
+      "authenticationConfig": "Authentication",
+      "policyConfig": "Policies",
+      "jsonObjectRequired": "Enter a valid JSON object"
+    },
+    "demoNotice": "Demo data resets when the service restarts. Publishing and data-plane synchronization are not enabled.",
+    "reconcileNotice": "Saved configuration reconciles automatically. Success confirms Kubernetes readback, not Envoy activation."
   },
   "consumer": {
     "columns": {

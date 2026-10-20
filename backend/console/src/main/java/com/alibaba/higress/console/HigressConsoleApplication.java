@@ -15,7 +15,7 @@ package com.alibaba.higress.console;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = {"com.alibaba.higress"})
+@SpringBootApplication(exclude = org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration.class, scanBasePackages = {"com.alibaba.higress"})
 public class HigressConsoleApplication {
 
     public static void main(String[] args) {

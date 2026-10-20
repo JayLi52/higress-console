@@ -22,7 +22,8 @@
     "pluginManagement": "插件配置",
     "systemSettings": "系统设置",
     "mcpManagement": "MCP管理",
-    "mcpConfigurations": "MCP配置"
+    "mcpConfigurations": "MCP配置",
+    "modelApiManagement": "Model API 管理"
   },
   "index": {
     "title": "Higress Console"
@@ -130,6 +131,121 @@
       "authEnabled": "已开启认证且有授权消费者",
       "reset": "重置"
     }
+  },
+  "modelApi": {
+    "create": "创建 Model API",
+    "edit": "编辑 Model API",
+    "deleteConfirmationPrefix": "确定删除 ",
+    "deleteConfirmationSuffix": " 吗？此操作无法撤销。",
+    "columns": {
+      "apiName": "API 名称",
+      "sceneAndProtocol": "场景 / 协议",
+      "basePath": "对外地址",
+      "routes": "方法 / 路径",
+      "providers": "分发目标",
+      "publishStatus": "发布状态",
+      "version": "版本",
+      "versions": "配置 / 已同步"
+    },
+    "search": {
+      "keyword": "关键字",
+      "keywordPlaceholder": "名称 / 描述 / BasePath"
+    },
+    "status": {
+      "DRAFT": "未发布",
+      "PUBLISHING": "发布中",
+      "PUBLISHED": "已发布",
+      "FAILED": "发布失败",
+      "PENDING": "等待同步",
+      "SYNCING": "同步中",
+      "SUCCESS": "K8s 已校验"
+    },
+    "sceneTypes": {
+      "TEXT_GENERATION": "文本生成",
+      "IMAGE_GENERATION": "图片生成",
+      "VIDEO_GENERATION": "视频生成",
+      "SPEECH_RECOGNITION": "语音识别",
+      "SPEECH_SYNTHESIS": "语音合成",
+      "RERANK": "重排序",
+      "EMBEDDING": "向量化",
+      "OTHER": "其他"
+    },
+    "protocols": {
+      "OPENAI": "OpenAI 兼容",
+      "ANTHROPIC": "Anthropic 兼容",
+      "BAILIAN": "百炼",
+      "VLLM": "vLLM",
+      "DOUBAO": "豆包",
+      "COMFYUI": "ComfyUI",
+      "HTTP_CUSTOM": "HTTP 自定义",
+      "WS_CUSTOM": "WebSocket 自定义"
+    },
+    "dispatcherStrategies": {
+      "HEADER": "按模型名路由",
+      "WEIGHT_MODEL_MAPPING": "权重路由",
+      "CONTEXT_LENGTH": "上下文长度路由",
+      "SINGLE_MODEL_MAPPING": "单模型直连"
+    },
+    "actions": {
+      "publish": "发布",
+      "publishing": "发布中…"
+    },
+    "messages": {
+      "created": "创建成功",
+      "updated": "更新成功",
+      "deleted": "删除成功",
+      "published": "发布完成"
+    },
+    "form": {
+      "apiName": "API 名称",
+      "apiNameExtra": "实例内唯一，创建后不可变，是数据面路由命名派生源",
+      "apiNameRequired": "请输入 API 名称",
+      "apiNamePattern": "仅小写字母、数字与中划线，2-51 位，不能以中划线开头",
+      "description": "描述",
+      "descriptionPlaceholder": "接口用途说明",
+      "sceneType": "场景",
+      "sceneTypeRequired": "请选择场景",
+      "sceneTypePlaceholder": "选择业务场景",
+      "protocol": "协议",
+      "protocolRequired": "请选择协议",
+      "protocolPlaceholder": "选择对外协议",
+      "basePath": "BasePath",
+      "basePathExtra": "对外契约的路径前缀，如 /api/qwen/",
+      "basePathRequired": "请输入 BasePath",
+      "basePathPattern": "必须以 / 开头",
+      "basePathRemove": "转发时移除 BasePath",
+      "basePathRemoveExtra": "转发到上游前剥离该前缀",
+      "firstByteTimeout": "首包超时（ms）",
+      "firstByteTimeoutExtra": "留空使用全局默认",
+      "domain": "绑定域名",
+      "domainExtra": "最多 1 个",
+      "methodPathList": "方法 / 路径",
+      "methodRequired": "请选择方法",
+      "pathRequired": "请输入路径",
+      "pathPattern": "必须以 / 开头",
+      "addMethodPath": "添加路径",
+      "methodAny": "任意方法",
+      "dispatcherStrategy": "分发策略",
+      "dispatcherStrategyRequired": "请选择分发策略",
+      "dispatcherStrategyExtra": "决定请求如何分发到供应商池",
+      "dispatcherTargets": "分发目标",
+      "providerRequired": "请输入供应商",
+      "providerPlaceholder": "AI 服务提供者",
+      "weightRequired": "请输入权重",
+      "weightExtra": "权重范围 1-1000",
+      "targetModelPlaceholder": "目标模型（可改写）",
+      "addTarget": "添加供应商",
+      "currentStatus": "当前发布状态",
+      "advancedConfig": "高级配置",
+      "upstreamAffinityConfig": "上游亲和性配置",
+      "observationConfig": "可观测性配置",
+      "fallback": "降级配置",
+      "authenticationConfig": "认证配置",
+      "policyConfig": "策略配置",
+      "jsonObjectRequired": "请输入有效的 JSON 对象"
+    },
+    "demoNotice": "当前使用演示数据，服务重启后重置。发布与数据面同步暂未启用。",
+    "reconcileNotice": "配置保存到 PostgreSQL 后自动同步。成功仅表示 Kubernetes 资源回读一致，不代表 Envoy 已生效。"
   },
   "consumer": {
     "columns": {
